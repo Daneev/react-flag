@@ -6,7 +6,7 @@ export const ItemList = (props) => {
   const elements = props.visibleList.map((item) => {
     const {id, ...itemProps} = item;
   return (
-    <li key={id} className="list-group-item shadow d-flex flex-column flex-sm-row">
+    <li key={id} className="list-group-item d-flex flex-column flex-sm-row">
       <Item {...itemProps}/>
     </li>
   )});

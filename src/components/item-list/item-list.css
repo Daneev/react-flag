@@ -1,3 +1,11 @@
 .list-group {
   margin-bottom: 0px;
 }
+
+.list-group-item:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  -webkit-transform: scale(1.02);
+  -ms-transform: scale(1.02);
+  transform: scale(1.02);
+  cursor: pointer;
+}
