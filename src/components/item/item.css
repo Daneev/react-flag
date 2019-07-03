@@ -1,0 +1,24 @@
+.list-group-item {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.col-auto {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+img {
+  max-width: 100px;
+  max-height: auto;
+  height: auto;
+  padding-left: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+}
+
+p {
+  margin-bottom: 0px;
+}
