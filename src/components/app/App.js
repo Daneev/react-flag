@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Service, country1} from '../../service-api/service-api';
+import { Service } from '../../service-api/service-api';
 import { Search } from '../search/search'
 import { ItemList } from '../item-list/item-list'
 import { Spinner } from '../spinner/spinner';
@@ -9,7 +9,8 @@ class App extends Component {
   serv = new Service();
 
   state = {
-    itemList: []
+    itemList: [],
+    textSearch: ''
   }
 
   componentDidMount () {
@@ -18,19 +19,27 @@ class App extends Component {
       this.setState({itemList})
     });
   }
-
+  textSearch = (items, text) => {
+    console.log(text)
+    if (text.length === 0) return items
+    //search text in state
+    return items.filter(item => item.name.toLowerCase().includes(text.toLowerCase()))
+  }
+  textSearchFilter = (textSearch) => {
+    this.setState({ textSearch })
+  }
   render (){
-    const {itemList} = this.state;
-    console.log("TCL: App -> render -> itemList", itemList)
+    const { itemList, textSearch} = this.state;
       if (!itemList) {
         return <Spinner />;
       }
+    const visibleItems = this.textSearch(itemList, textSearch)
   return (
     <div className="App">
       <div className="container">
         <h5 className="text-center">Flag Search</h5>
-        <Search />
-        <ItemList country={itemList}/>
+        <Search textSearch={this.textSearchFilter}/>
+        <ItemList visibleList={visibleItems}/>
       </div>
     </div>
   )}

@@ -25,22 +25,3 @@ export class Service {
   };
 
 };
-
-
-export const country1 = [
-  {
-    flag: "https://restcountries.eu/data/afg.svg",
-    name: "Afghanistan",
-    population: 27657145
-  },
-  {
-    flag: "https://restcountries.eu/data/ala.svg",
-    name: "Åland Islands",
-    population: 28875
-  },
-  {
-    flag: "https://restcountries.eu/data/alb.svg",
-    name: "Albania",
-    population: 2886026
-  }
-]
