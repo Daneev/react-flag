@@ -10,7 +10,8 @@ class App extends Component {
 
   state = {
     itemList: [],
-    textSearch: ''
+    textSearch: '',
+    loading: true
   }
 
   componentDidMount () {
@@ -18,6 +19,7 @@ class App extends Component {
     .then((itemList) => {
       this.setState({itemList})
     });
+    this.setState({loading: false});
   }
   textSearch = (items, text) => {
     console.log(text)
@@ -29,8 +31,8 @@ class App extends Component {
     this.setState({ textSearch })
   }
   render (){
-    const { itemList, textSearch} = this.state;
-      if (!itemList) {
+    const { itemList, textSearch, loading} = this.state;
+    if (loading) {
         return <Spinner />;
       }
     const visibleItems = this.textSearch(itemList, textSearch)

@@ -18,7 +18,7 @@ export class Service {
     list.forEach((element) => {
       if (element) {
       element.id = count;
-      count++;
+      count += 1;
       }
     });
     return list;
